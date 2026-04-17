@@ -1,15 +1,1 @@
-```
-# Build artifacts
-Build/
-# Logs and temp files
-*.log
-*.tmp
-*.swp
-# Environment
-.env
-.env.local
-.env.*
-# Editors
-.vscode/
-.idea/
-```
+(index.html is a source file, so no need to add anything to .gitignore)

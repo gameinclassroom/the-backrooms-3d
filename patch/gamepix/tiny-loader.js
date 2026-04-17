@@ -5613,7 +5613,7 @@
                 try {
                     this.config = JSON.parse(await r)
                 } catch (e) {
-                    return alert("Can't start gpx.json not found"),
+                    return console.log("Can't start gpx.json not found"),
                     void this.log("ERR! Unable to load gpx.json", e)
                 }
                 this.host.systemInfo.devHost = (0,
@@ -5632,7 +5632,7 @@
                 try {
                     await this.mountJs(i)
                 } catch (e) {
-                    return alert("Unable to mount init scripts"),
+                    return console.log("Unable to mount init scripts"),
                     void this.log("ERR! Unable to mount init scripts", e)
                 }
                 if (void 0 !== this.config.workerScripts && void 0 !== this.config.workerScripts.browserImageLoader && void 0 !== this.config.workerScripts.wasmImageLoader)
@@ -5655,7 +5655,7 @@
                     for (const e of [...this.stop].reverse())
                         await e()
                 } catch (e) {
-                    alert("Unable to execute post stop script"),
+                    console.log("Unable to execute post stop script"),
                     this.log("ERR! Unable to execute post stop script", e)
                 }
                 this.run = this.runCopy,
@@ -5673,7 +5673,7 @@
                     this.runCopy = this.run,
                     delete this.run
                 } catch (e) {
-                    alert("Unable to execute run script"),
+                    console.log("Unable to execute run script"),
                     this.log("ERR! Unable to execute run script", e),
                     this.errors.push({
                         name: e.name,
@@ -5687,7 +5687,7 @@
                     this.postRunCopy = this.postRun,
                     delete this.postRun
                 } catch (e) {
-                    alert("Unable to execute post run script"),
+                    console.log("Unable to execute post run script"),
                     this.log("ERR! Unable to execute post run script", e)
                 }
             }

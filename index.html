@@ -107,7 +107,10 @@ for (var i = 0; i < iframes.length; i++) {
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
     <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/WebGL.json", { onProgress: UnityProgress });
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/WebGL.json", { 
+        onProgress: UnityProgress,
+        QualitySettings: 2
+      });
     </script>
   </head>
   <body style="overflow:hidden; margin:0; padding:0;">

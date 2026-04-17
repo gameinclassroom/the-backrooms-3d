@@ -109,7 +109,15 @@ for (var i = 0; i < iframes.length; i++) {
     <script>
       var gameInstance = UnityLoader.instantiate("gameContainer", "Build/WebGL.json", { 
         onProgress: UnityProgress,
-        QualitySettings: 2
+        onRuntimeInitialized: function() {
+          // Effects ayarını otomatik olarak aktif et
+          setTimeout(function() {
+            if (gameInstance && gameInstance.SendMessage) {
+              // Effects checkbox'ını işaretle
+              gameInstance.SendMessage("SettingsManager", "SetEffectsEnabled", true);
+            }
+          }, 2000);
+        }
       });
     </script>
   </head>
